@@ -1,0 +1,511 @@
+/* ============================================================
+    GENERAL STYLING
+============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #263238;
+    background: #f5f7f6;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* ============================================================
+    SIDEBAR
+============================================================ */
+
+.sidebar {
+    width: 340px;
+    min-width: 300px;
+    height: 100%;
+    overflow-y: auto;
+    background: white;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar-header {
+    background: #1e4d3a;
+    color: white;
+    padding: 22px 18px;
+}
+
+.sidebar-header h1 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.sidebar-header p {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.sidebar-section {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.sidebar-section h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #1e4d3a;
+}
+
+.section-description {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+    SEARCH
+============================================================ */
+
+#searchInput {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: #1e4d3a;
+}
+
+
+/* ============================================================
+    FILTER DROPDOWNS
+============================================================ */
+
+.filter-dropdown {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    background: #fafafa;
+}
+
+.filter-dropdown summary {
+    padding: 11px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    list-style: none;
+}
+
+.filter-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.filter-dropdown summary::after {
+    content: "+";
+}
+
+.filter-dropdown[open] summary::after {
+    content: "−";
+}
+
+.filter-dropdown summary span {
+    font-size: 11px;
+    color: #1e4d3a;
+    font-weight: normal;
+}
+
+.filter-options {
+    max-height: 180px;
+    overflow-y: auto;
+    padding: 8px 12px;
+    border-top: 1px solid #ddd;
+    background: white;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    padding: 6px 0;
+    cursor: pointer;
+}
+
+.filter-option input {
+    accent-color: #1e4d3a;
+}
+
+
+/* ============================================================
+    LAYER VISIBILITY CONTROLS & SYMBOLS
+============================================================ */
+
+.layer-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.layer-toggle input {
+    cursor: pointer;
+    accent-color: #1e4d3a;
+}
+
+.layer-symbol {
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.school-public {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #2563eb;
+}
+
+.school-private {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #16a34a;
+}
+
+.school-unknown {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #f59e0b;
+}
+
+.healthcare-symbol {
+    width: 13px;
+    height: 13px;
+    background: #dc2626;
+    border-radius: 2px;
+}
+
+.road-symbol {
+    width: 20px;
+    height: 4px;
+    background: #e58b27;
+}
+
+
+/* ============================================================
+    ROUTE PLANNER
+============================================================ */
+
+#routePlanner {
+    background: #fff;
+}
+
+.route-location {
+    margin-bottom: 14px;
+}
+
+.route-location label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.route-location-value {
+    background: #f3f5f7;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+    color: #444;
+}
+
+#routePlanner select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    font-size: 13px;
+}
+
+#routePlanner button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #1e4d3a;
+    color: white;
+    font-size: 13px;
+}
+
+#routePlanner button:hover {
+    background: #163a2c;
+}
+
+#routePlanner .secondary-button {
+    background: #68757d;
+}
+
+#routePlanner .secondary-button:hover {
+    background: #4e5960;
+}
+
+#routeSummary {
+    margin-top: 14px;
+    padding: 10px;
+    background: #f0f5f2;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+#routeSummary h4,
+#routeInstructions h4 {
+    margin-bottom: 8px;
+    color: #1e4d3a;
+}
+
+#routeInstructions {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+#routeInstructions ol {
+    padding-left: 22px;
+}
+
+#routeInstructions li {
+    margin-bottom: 9px;
+}
+
+
+/* ============================================================
+    STATISTICS
+============================================================ */
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+}
+
+.stat-card {
+    background: #f0f5f2;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.stat-card span {
+    display: block;
+    color: #1e4d3a;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.stat-card small {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #555;
+}
+
+
+/* ============================================================
+    BUTTONS
+============================================================ */
+
+.reset-button {
+    width: 100%;
+    background: #68757d;
+    color: white;
+    padding: 11px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background: #4e5960;
+}
+
+
+/* ============================================================
+    MAP
+============================================================ */
+
+.map-container {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ============================================================
+    MARKER CLUSTERS
+============================================================ */
+
+.marker-cluster {
+    background: transparent;
+}
+
+.marker-cluster div {
+    width: 28px;
+    height: 28px;
+    margin-left: 6px;
+    margin-top: 6px;
+    border-radius: 50%;
+}
+
+.marker-cluster div span {
+    display: none !important;
+}
+
+.school-cluster div {
+    background: rgba(37, 99, 235, 0.65);
+    border: 2px solid white;
+}
+
+.health-cluster div {
+    background: rgba(220, 38, 38, 0.65);
+    border: 2px solid white;
+}
+
+
+/* ============================================================
+    MAP LEGEND
+============================================================ */
+
+.map-legend {
+    position: absolute;
+    z-index: 500;
+    bottom: 35px;
+    right: 12px;
+    background: white;
+    padding: 13px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    min-width: 175px;
+}
+
+.map-legend h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 8px;
+    font-size: 11px;
+}
+
+.legend-symbol {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: 1px solid white;
+    box-shadow: 0 0 2px #555;
+}
+
+.legend-line {
+    width: 22px;
+    height: 4px;
+    display: inline-block;
+}
+
+
+/* ============================================================
+    STATUS BAR
+============================================================ */
+
+#status {
+    position: absolute;
+    z-index: 500;
+    bottom: 5px;
+    left: 10px;
+    background: rgba(255,255,255,0.9);
+    padding: 7px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    max-width: 65%;
+}
+
+
+/* ============================================================
+    POPUPS
+============================================================ */
+
+.map-popup {
+    min-width: 190px;
+    line-height: 1.7;
+    font-size: 12px;
+}
+
+.map-popup h3 {
+    color: #1e4d3a;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.route-popup-actions {
+    margin-top: 8px;
+}
+
+.route-set-point {
+    display: block;
+    width: 100%;
+    padding: 7px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 4px;
+    background: #1e4d3a;
+    color: white;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.route-set-point:hover {
+    background: #163a2c;
+}
+
+
+/* ============================================================
+    RESPONSIVE DESIGN
+============================================================ */
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 270px;
+        min-width: 250px;
+    }
+}
